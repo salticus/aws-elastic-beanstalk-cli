@@ -121,7 +121,7 @@ def _add_service(services, definition, volume_map, host_log, high_priority_env):
             dirname = src_vol[len(AWSEB_LOGS):]
             src_path = os.path.join(host_log, dirname)
 
-            os.makedirs(src_path)
+            os.makedirs(src_path, exist_ok=True)
         else:
             continue
 
